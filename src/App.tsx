@@ -15,10 +15,10 @@ import RegisterPage from "./pages/registerPage";
 import homeLoader from "./loaders/unAuthLoader";
 import Header from "./components/header";
 import CartPage from "./pages/cart";
-import BooksPage from "./pages/booksPage";
-import ViewBook from "./pages/viewBook";
+import ListingsPage from "./pages/listingPage";
+import ViewListing from "./pages/viewListing";
 import BlogsPage from "./pages/blogsPage";
-import AddBook from "./pages/addBook";
+import AddListing from "./pages/addListing";
 
 export default function App() {
   const route = createBrowserRouter(
@@ -31,9 +31,9 @@ export default function App() {
         </Route>
         <Route loader={authLoader}>
           <Route path="cart" element={<CartPage />} />
-          <Route path="books" element={<BooksPage />} />
-          <Route path="books/add" element={<AddBook />} />
-          <Route path="books/:id" element={<ViewBook />} />
+          <Route path="listings" element={<ListingsPage />} />
+          <Route path="listings/add" element={<AddListing />} />
+          <Route path="listings/:id" element={<ViewListing />} />
           <Route path="blogs" element={<BlogsPage />} />
           <Route path="profile" element={<ProfilePage />} />
         </Route>

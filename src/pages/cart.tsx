@@ -15,7 +15,7 @@ export default function CartPage() {
             listings.map((listing) => <CartCard key={listing._id} listing={listing} />)
           ) : (
             <section className="w-full h-72 grid place-content-center font-semibold text-lg ">
-              No Books in cart
+              No Orders in cart
             </section>
           )}
         </section>

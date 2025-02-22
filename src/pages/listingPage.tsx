@@ -6,11 +6,11 @@ import {
   ListingTag,
   ListingType
 } from "../interfaces/enums";
-import BookCategorySection from "../components/listings/listingCategory";
+import ListingCategorySection from "../components/listings/listingCategory";
 import Aside from "../components/listings/aside";
 import useListings from "../hooks/useListings";
 import LoadingSection from "../components/loadingSection";
-import BooksGrid from "../components/listings/listingGrid";
+import ListingsGrid from "../components/listings/listingGrid";
 import { IListing } from "../interfaces/listing";
 
 export interface ListingFilters {
@@ -21,7 +21,7 @@ export interface ListingFilters {
   offer: ListingOffer | null;
 }
 
-export default function BooksPage() {
+export default function ListingsPage() {
   const [filters, setFilters] = useState<ListingFilters>({
     category: null,
     type: null,
@@ -67,7 +67,7 @@ export default function BooksPage() {
 
   return (
     <article>
-      <BookCategorySection
+      <ListingCategorySection
         filters={filters}
         handleFilterChange={handleFilterChange}
       />
@@ -75,10 +75,10 @@ export default function BooksPage() {
         <Aside
           filters={filters}
           handleFilterChange={handleFilterChange}
-          books={listings}
+          listings={listings}
         />
         <article className="padd-r pl-10 w-3/4 bg-blue-50 py-12">
-          {loading ? <LoadingSection /> : <BooksGrid listings={filteredListings} />}
+          {loading ? <LoadingSection /> : <ListingsGrid listings={filteredListings} />}
         </article>
       </article>
     </article>

@@ -1,6 +1,6 @@
 import { categories } from "../../constants/filters";
 import { ListingCategory } from "../../interfaces/enums";
-import { ListingFilters } from "../../pages/booksPage";
+import { ListingFilters } from "../../pages/listingPage";
 import CustomButton from "../button";
 
 export default function ListingCategorySection({
@@ -16,7 +16,7 @@ export default function ListingCategorySection({
   return (
     <article className="padd py-10 border-b border-gray-300 flex flex-col gap-8">
       <h1 className="font-bold font-serif text-3xl">
-        {filters.category ? filters.category + " Books" : "All Books"}
+        {filters.category ? filters.category + " Listings" : "All Listings"}
       </h1>
       <section>
         <section className="flex flex-nowrap items-center overflow-auto gap-4 mt-2 no-scrollbar">

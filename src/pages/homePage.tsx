@@ -1,4 +1,4 @@
-import BooksOverview from "../components/homepage/booksOverview";
+import ListingsOverview from "../components/homepage/listingsOverview";
 // import Clip from "../components/homepage/clip";
 import Hero from "../components/homepage/hero";
 import Recommended from "../components/homepage/recommendedd";
@@ -15,7 +15,7 @@ export default function HomePage() {
     return (
       <article>
         <section className="text-center py-10">
-          <h2 className="text-2xl font-bold">No books available</h2>
+          <h2 className="text-2xl font-bold">No Listings available</h2>
         </section>
       </article>
     );
@@ -26,7 +26,7 @@ export default function HomePage() {
       <Hero listings={listings} />
       {/* <Clip /> */}
       <Recommended listings={listings} />
-      <BooksOverview listings={listings} />
+      <ListingsOverview listings={listings} />
     </article>
   );
 }

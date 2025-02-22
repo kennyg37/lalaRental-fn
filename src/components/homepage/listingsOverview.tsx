@@ -2,14 +2,14 @@ import { Link, useNavigate } from "react-router-dom";
 import { IListing } from "../../interfaces/listing";
 import ListingCard from "../ListingCard";
 
-export default function BooksOverview({ listings }: { listings: IListing[] }) {
+export default function ListingsOverview({ listings }: { listings: IListing[] }) {
   return (
     <article className="padd py-8 flex justify-betwee items-start gap-6">
       <section className="w-4/6 flex flex-col gap-6">
-        <section className="p-8 bg-white w-full" id="new-releases">
+        <section className="p-8 bg-white w-full" id="new-listings">
           <div className="flex justify-between items-center mb-8">
             <h2 className="text-2xl font-bold font-serif">New Releases</h2>
-            <Link to="/books">View More</Link>
+            <Link to="/listings">View More</Link>
           </div>
           <section className="flex justify-between gap-6 items-start w-full px-6">
             {listings
@@ -20,7 +20,7 @@ export default function BooksOverview({ listings }: { listings: IListing[] }) {
               ))}
           </section>
         </section>
-        <section className="p-8 bg-white w-full" id="best-seller">
+        <section className="p-8 bg-white w-full" id="top-ranked">
           <div className="flex justify-between items-center mb-8">
             <h2 className="text-2xl font-bold font-serif">Best Offers</h2>
             <Link to="/listings">View More</Link>

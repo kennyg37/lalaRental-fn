@@ -9,7 +9,7 @@ import toast from "react-hot-toast";
 import { uploadListing } from "../utils/upload";
 import { useNavigate } from "react-router";
 
-export default function AddBook() {
+export default function addListing() {
   const { register, handleSubmit } = useForm<IListing>();
   const [loading, setLoading] = useState(false);
   const [image, setImage] = useState<File | null>(null);
@@ -72,7 +72,7 @@ export default function AddBook() {
               type="text"
               {...register("title")}
               className="font-normal px-6 py-2 outline-none border-none rounded-xl bg-blue-50"
-              placeholder="Book Title"
+              placeholder="Listing Title"
             />
           </label>
         </div>
@@ -81,7 +81,7 @@ export default function AddBook() {
           <textarea
             {...register("description")}
             className="font-normal px-6 py-2 outline-none border-none rounded-xl bg-blue-50"
-            placeholder="Book Description"
+            placeholder="Listing Description"
           />
         </label>
         <div className="w-full flex gap-4 md:flex-col">
@@ -91,7 +91,7 @@ export default function AddBook() {
               type="number"
               {...register("price")}
               className="font-normal px-6 py-2 outline-none border-none rounded-xl bg-blue-50"
-              placeholder="Book Price"
+              placeholder="Listing Price"
             />
           </label>
           <label className="w-full flex flex-col gap-2 font-semibold">

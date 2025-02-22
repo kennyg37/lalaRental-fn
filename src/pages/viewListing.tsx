@@ -5,7 +5,7 @@ import Recommended from "../components/homepage/recommendedd";
 import ListingHero from "../components/listings/listingHero";
 import AboutAuthor from "../components/listings/aboutHost";
 
-export default function ViewBook() {
+export default function ViewListing() {
   const { id } = useParams();
   const { listings, loading: listingloading } = useListings();
   const { listing, loading } = useListing(id!);
