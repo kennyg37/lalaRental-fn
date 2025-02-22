@@ -1,12 +1,50 @@
-import './App.css'
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  Route,
+  RouterProvider,
+} from "react-router-dom";
 
-function App(){
+import { Toaster } from "react-hot-toast";
+import HomePage from "./pages/homePage";
+import NotFound from "./pages/notFound";
+import authLoader from "./loaders/authLoader";
+import ProfilePage from "./pages/profile";
+import LoginPage from "./pages/loginPage";
+import RegisterPage from "./pages/registerPage";
+import homeLoader from "./loaders/unAuthLoader";
+import Header from "./components/header";
+import CartPage from "./pages/cart";
+import BooksPage from "./pages/booksPage";
+import ViewBook from "./pages/viewBook";
+import BlogsPage from "./pages/blogsPage";
+import AddBook from "./pages/addBook";
+
+export default function App() {
+  const route = createBrowserRouter(
+    createRoutesFromElements(
+      <Route element={<Header />} path="/">
+        <Route index element={<HomePage />} />
+        <Route loader={homeLoader}>
+          <Route path="login" element={<LoginPage />} />
+          <Route path="register" element={<RegisterPage />} />
+        </Route>
+        <Route loader={authLoader}>
+          <Route path="cart" element={<CartPage />} />
+          <Route path="books" element={<BooksPage />} />
+          <Route path="books/add" element={<AddBook />} />
+          <Route path="books/:id" element={<ViewBook />} />
+          <Route path="blogs" element={<BlogsPage />} />
+          <Route path="profile" element={<ProfilePage />} />
+        </Route>
+        <Route path="*" element={<NotFound />} />
+      </Route>
+    )
+  );
   return (
-    <div className='h-screen flex flex-col items-center justify-center space-y-4'>
-      <h1 className='text-4xl font-bold'>Hello this is LalaRent</h1>
-      <p className='text-lg text-gray-500'>The application will lauch soon stay tuned</p>
-    </div>
-  )
+    <article>
+      <RouterProvider router={route} />
+      <Toaster position="top-center" reverseOrder={false} />
+    </article>
+  );
 }
-
-export default App
